@@ -1,5 +1,26 @@
 # Changelog
 
-All notable changes to this Helm chart will be documented in this file.
+## [0.6.2](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.6.1...k8s-copycat-chart-v0.6.2) (2025-11-21)
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+### Features
+
+* add Helm chart ([#121](https://github.com/matzegebbe/k8s-copycat/issues/121)) ([276921a](https://github.com/matzegebbe/k8s-copycat/commit/276921aac4386a97d39a08b03df77ef0a019af53))
+
+### Continuous Integration
+
+* align helm appVersion with release tags ([#124](https://github.com/matzegebbe/k8s-copycat/issues/124)) ([eb99af6](https://github.com/matzegebbe/k8s-copycat/commit/eb99af64b9cac586ceb86b866fa17f74f7af314c))
+* enable Dependabot Docker monitoring for the chart's default image tag to track new Copycat releases
+
+### Miscellaneous
+
+* release main ([#123](https://github.com/matzegebbe/k8s-copycat/issues/123)) ([14ac111](https://github.com/matzegebbe/k8s-copycat/commit/14ac111a1e4e84b9a158df302caa8fa212b0e772))
+
+## [0.6.0](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.5.0...k8s-copycat-chart-v0.6.0) (2025-11-12)
+
+### Features
+
+* add Helm chart ([#121](https://github.com/matzegebbe/k8s-copycat/issues/121)) ([276921a](https://github.com/matzegebbe/k8s-copycat/commit/276921aac4386a97d39a08b03df77ef0a019af53))
+
+### Continuous Integration
+
+* align helm appVersion with release tags ([#124](https://github.com/matzegebbe/k8s-copycat/issues/124)) ([eb99af6](https://github.com/matzegebbe/k8s-copycat/commit/eb99af64b9cac586ceb86b866fa17f74f7af314c))

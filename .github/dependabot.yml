@@ -19,8 +19,11 @@ updates:
       interval: "daily"
       time: "07:10"
       timezone: "Europe/Berlin"
-    labels: ["dependencies", "docker"]
+    labels: ["dependencies", "docker", "helm-chart"]
     commit-message:
       prefix: "chore"
       include: "scope"
     open-pull-requests-limit: 5
+    allow:
+      # Track new Copycat controller releases so the chart's default image tag stays current.
+      - dependency-name: "ghcr.io/matzegebbe/k8s-copycat"

@@ -42,8 +42,8 @@ jobs:
       - name: Package chart
         run: |
           mkdir -p dist
-          helm dependency update charts/k8s-copycat
-          helm package charts/k8s-copycat --destination dist
+          helm dependency update .
+          helm package . --destination dist
 
       - name: Login to GHCR
         run: |
