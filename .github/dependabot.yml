@@ -13,6 +13,18 @@ updates:
       include: "scope"
     labels: ["dependencies", "ci"]
 
+  - package-ecosystem: "helm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+      time: "07:05"
+      timezone: "Europe/Berlin"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    labels: ["dependencies", "helm-chart"]
+
   - package-ecosystem: "docker"
     directory: "/"
     schedule:
