@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.7.0](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.6.2...k8s-copycat-chart-v0.7.0) (2026-01-23)
+
+
+### Features
+
+* initial commit ([b0bf875](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/b0bf8756cd3dc620b3350d8f997e7a28a39bcaeb))
+
+
+### Miscellaneous
+
+* bump appVersion to v0.11.0 and add Helm dependabot ([c05d52b](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/c05d52bc153e8242f0e8984ebec00c6c2c3cd704))
+* **deps:** track copycat image tag with dependabot ([b1437f7](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/b1437f750a340e08d20ca9299f2a82d6086cc873))
+* update copycat version and dependabot ([def5a1f](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/def5a1fa32590ed51f353394120cb82cc294eadf))
+
 ## [0.6.2](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.6.1...k8s-copycat-chart-v0.6.2) (2025-11-21)
 
 ### Features
