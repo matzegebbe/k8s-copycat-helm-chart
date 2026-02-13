@@ -31,7 +31,7 @@ This repository packages the Helm chart for [k8s-copycat](https://github.com/mat
 2. **Install or upgrade the chart** from the OCI registry:
 
    ```bash
-   CHART_VERSION="<desired version>"  # e.g., 0.6.2
+   CHART_VERSION="<desired version>"  # e.g., 0.7.0
    NAMESPACE="k8s-copycat"
 
    helm upgrade --install k8s-copycat \
@@ -156,12 +156,13 @@ These values render directly into `config.yaml` and are consumed by the controll
 | `config.allowDifferentDigestRepush` | Allow repush with differing digests. | `true` |
 | `config.excludeRegistries` | Registries to ignore. | `[]` |
 | `config.watchResources` | Specific resources to watch. | `[]` |
-| `config.maxConcurrentReconciles` | Concurrent reconciliations. | `1` |
+| `config.maxConcurrentReconciles` | Concurrent reconciliations. | `2` |
 | `config.requestTimeout` | Request timeout in seconds. | `120` |
 | `config.failureCooldownMinutes` | Cooldown after a failure. | `null` |
 | `config.forceReconcileMinutes` | Forced reconcile interval. | `null` |
 | `config.ecr.accountID` / `config.ecr.region` / `config.ecr.repoPrefix` | AWS ECR settings. | `""` / `""` / `""` |
 | `config.ecr.createRepo` | Create target ECR repos automatically. | `false` |
+| `config.ecr.assumeRoleArn` | Optional IAM role ARN to assume before ECR operations. | `""` |
 | `config.ecr.lifecyclePolicy` | Optional ECR lifecycle policy JSON. | `""` |
 | `config.docker.registry` | Target Docker registry. | `""` |
 | `config.docker.repoPrefix` | Prefix for mirrored images. | `""` |
@@ -212,5 +213,5 @@ configMap:
 ## Development
 
 - Run `helm lint` and `helm template` locally before submitting changes.
-- Release automation packages the chart from the repository root and publishes it to `ghcr.io/matzegebbe/charts`. Chart versions follow the Git tag (e.g., tag `v0.6.2` produces chart version `0.6.2`).
+- Release automation packages the chart from the repository root and publishes it to `ghcr.io/matzegebbe/charts`. Chart versions follow the Git tag (e.g., tag `v0.7.0` produces chart version `0.7.0`).
 - Update [`CHANGELOG.md`](./CHANGELOG.md) and [`Chart.yaml`](./Chart.yaml) metadata when making user-facing changes.
