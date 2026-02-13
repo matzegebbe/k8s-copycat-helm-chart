@@ -223,7 +223,7 @@ config:
     jobs: []
     cronJobs: []
     pods: []
-  maxConcurrentReconciles: 1
+  maxConcurrentReconciles: 2
   requestTimeout: 120
   failureCooldownMinutes: null
   forceReconcileMinutes: null
@@ -232,6 +232,7 @@ config:
     region: ""
     repoPrefix: ""
     createRepo: false
+    assumeRoleArn: ""
     lifecyclePolicy: ""
   docker:
     registry: ""
