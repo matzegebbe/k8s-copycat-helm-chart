@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.7.1](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.7.0...k8s-copycat-chart-v0.7.1) (2026-03-25)
+
+
+### Miscellaneous
+
+* **chart:** bump k8s-copycat defaults to v0.15.0 ([#4](https://github.com/matzegebbe/k8s-copycat-helm-chart/issues/4)) ([67f154a](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/67f154a0f36f81f9b3050150923497f84ffa3afd))
+* **deps:** bump azure/setup-helm from 4 to 5 ([#6](https://github.com/matzegebbe/k8s-copycat-helm-chart/issues/6)) ([6280f78](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/6280f78f13ffa574c53fe23e2839e17f35e23e13))
+
 ## [0.7.0](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.6.2...k8s-copycat-chart-v0.7.0) (2026-01-23)
 
 
