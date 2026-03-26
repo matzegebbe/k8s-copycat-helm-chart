@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.7.3](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.7.2...k8s-copycat-chart-v0.7.3) (2026-03-26)
+
+
+### Bug Fixes
+
+* **helm:** add png and json ignore ([#9](https://github.com/matzegebbe/k8s-copycat-helm-chart/issues/9)) ([471e96a](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/471e96afb2a831842d50540f5be7fb8df01b8ca8))
+
 ## [0.7.2](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.7.1...k8s-copycat-chart-v0.7.2) (2026-03-26)
 
 
