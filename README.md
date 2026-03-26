@@ -35,7 +35,7 @@ This repository packages the Helm chart for [k8s-copycat](https://github.com/mat
    NAMESPACE="k8s-copycat"
 
    helm upgrade --install k8s-copycat \
-     oci://ghcr.io/matzegebbe/charts/k8s-copycat \
+     oci://ghcr.io/matzegebbe/k8s-copycat-helm-chart/k8s-copycat \
      --version "${CHART_VERSION}" \
      --namespace "${NAMESPACE}" \
      --create-namespace
@@ -44,7 +44,7 @@ This repository packages the Helm chart for [k8s-copycat](https://github.com/mat
 3. **Inspect defaults** without installing:
 
    ```bash
-   helm show values oci://ghcr.io/matzegebbe/charts/k8s-copycat --version "${CHART_VERSION}" > values.example.yaml
+   helm show values oci://ghcr.io/matzegebbe/k8s-copycat-helm-chart/k8s-copycat --version "${CHART_VERSION}" > values.example.yaml
    ```
 
 4. **Uninstall**:
@@ -192,7 +192,7 @@ Install with:
 
 ```bash
 helm upgrade --install k8s-copycat \
-  oci://ghcr.io/matzegebbe/charts/k8s-copycat \
+  oci://ghcr.io/matzegebbe/k8s-copycat-helm-chart/k8s-copycat \
   --version "${CHART_VERSION}" \
   --namespace "${NAMESPACE}" \
   -f ./custom-values.yaml
@@ -213,5 +213,5 @@ configMap:
 ## Development
 
 - Run `helm lint` and `helm template` locally before submitting changes.
-- Release automation packages the chart from the repository root and publishes it to `ghcr.io/matzegebbe/charts`. Chart versions follow the Git tag (e.g., tag `v0.7.0` produces chart version `0.7.0`).
+- Release automation packages the chart from the repository root and publishes it to `ghcr.io/matzegebbe/k8s-copycat-helm-chart/k8s-copycat`. Chart versions follow the release-please tag (e.g., `k8s-copycat-chart-v0.7.0` produces chart version `0.7.0`).
 - Update [`CHANGELOG.md`](./CHANGELOG.md) and [`Chart.yaml`](./Chart.yaml) metadata when making user-facing changes.

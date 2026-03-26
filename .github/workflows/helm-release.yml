@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   publish:
-    if: startsWith(github.event.release.tag_name, 'v')
+    if: startsWith(github.event.release.tag_name, 'k8s-copycat-chart-v')
     runs-on: ubuntu-latest
     concurrency:
       group: helm-release-${{ github.event.release.tag_name }}
@@ -28,17 +28,15 @@ jobs:
       - name: Sync chart version with release tag
         run: |
           RAW_TAG="${GITHUB_REF_NAME}"
-          TAG="${RAW_TAG#v}"
-          echo "Setting chart version to ${TAG} and appVersion to ${RAW_TAG}"
+          TAG="${RAW_TAG##*-v}"
+          echo "Setting chart version to ${TAG}"
           sed -i -E "s/^version: .*/version: ${TAG} # replaced by CI/" Chart.yaml
-          sed -i -E "s/^appVersion: .*/appVersion: \"${RAW_TAG}\" # replaced by CI/" Chart.yaml
 
       - name: Validate chart version
         run: |
           RAW_TAG="${GITHUB_REF_NAME}"
-          TAG="${RAW_TAG#v}"
+          TAG="${RAW_TAG##*-v}"
           grep -Eq "^version: ${TAG}([[:space:]]+#.*)?$" Chart.yaml || { echo "Chart version mismatch"; cat Chart.yaml; exit 1; }
-          grep -Eq "^appVersion: \"?${RAW_TAG}\"?([[:space:]]+#.*)?$" Chart.yaml || { echo "appVersion mismatch"; cat Chart.yaml; exit 1; }
       - name: Package chart
         run: |
           mkdir -p dist
@@ -51,8 +49,9 @@ jobs:
 
       - name: Push chart to GHCR
         run: |
+          OCI_REGISTRY="oci://ghcr.io/${GITHUB_REPOSITORY,,}"
           for chart in dist/*.tgz; do
-            helm push "$chart" oci://ghcr.io/${{ github.repository_owner }}/charts
+            helm push "$chart" "$OCI_REGISTRY"
           done
 
       - name: Upload packaged chart to release assets
