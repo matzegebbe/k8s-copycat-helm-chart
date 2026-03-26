@@ -11,3 +11,7 @@ Chart.lock
 Makefile
 README.md
 LICENSE
+*.png
+release-please-config.json
+.release-please-manifest.json
+CHANGELOG.md
