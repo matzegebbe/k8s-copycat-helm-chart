@@ -198,6 +198,50 @@ helm upgrade --install k8s-copycat \
   -f ./custom-values.yaml
 ```
 
+### Configuring registry credentials from a Kubernetes Secret
+
+Use `config.registryCredentials` to reference the environment variable names consumed by `k8s-copycat`, then inject those variables into the pod from a Secret with `extraEnvFrom`.
+
+```yaml
+config:
+  targetKind: docker
+  docker:
+    registry: ghcr.io
+    repoPrefix: mirror/
+    insecure: false
+  registryCredentials:
+    - registry: registry-1.docker.io
+      registryAliases:
+        - index.docker.io
+        - docker.io
+        - "*.docker.io"
+      usernameEnv: DOCKERHUB_USERNAME
+      passwordEnv: DOCKERHUB_PASSWORD
+    - registry: ghcr.io
+      registryAliases:
+        - "*.ghcr.io"
+        - docker.pkg.github.com
+      tokenEnv: GHCR_TOKEN
+
+extraEnvFrom:
+  - secretRef:
+      name: k8s-copycat-registry-creds
+```
+
+Create the Secret separately so credentials stay out of the ConfigMap:
+
+```yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: k8s-copycat-registry-creds
+type: Opaque
+stringData:
+  DOCKERHUB_USERNAME: your-dockerhub-user
+  DOCKERHUB_PASSWORD: your-dockerhub-password
+  GHCR_TOKEN: your-ghcr-token
+```
+
 ### Using an existing ConfigMap for controller settings
 
 ```yaml
