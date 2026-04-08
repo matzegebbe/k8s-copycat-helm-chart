@@ -225,8 +225,8 @@ config:
     pods: []
   maxConcurrentReconciles: 2
   requestTimeout: 120
-  failureCooldownMinutes: null
-  forceReconcileMinutes: null
+  failureCooldownMinutes: 0
+  forceReconcileMinutes: 0
   ecr:
     accountID: ""
     region: ""
