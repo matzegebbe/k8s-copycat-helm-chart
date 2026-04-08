@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.7.4](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.7.3...k8s-copycat-chart-v0.7.4) (2026-04-08)
+
+
+### Documentation
+
+* add example for creds ([#11](https://github.com/matzegebbe/k8s-copycat-helm-chart/issues/11)) ([2365bfa](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/2365bfa2be9d0903a824a6f189c9d1b0a56d27d5))
+
+
+### Miscellaneous
+
+* **deps:** bump actions/checkout from 4 to 6 ([#15](https://github.com/matzegebbe/k8s-copycat-helm-chart/issues/15)) ([08de6f4](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/08de6f4e79234120669fcfc54309f27da150eecc))
+* **deps:** bump peter-evans/create-pull-request from 7 to 8 ([#14](https://github.com/matzegebbe/k8s-copycat-helm-chart/issues/14)) ([5df9c70](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/5df9c70f533f4c2409a1371b941fa245b599c8c7))
+
 ## [0.7.3](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.7.2...k8s-copycat-chart-v0.7.3) (2026-03-26)
 
 
