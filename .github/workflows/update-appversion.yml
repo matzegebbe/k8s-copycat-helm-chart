@@ -1,0 +1,47 @@
+name: Update appVersion
+
+on:
+  schedule:
+    - cron: "0 7 * * *" # daily at 07:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get latest k8s-copycat release
+        id: latest
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG=$(gh api repos/matzegebbe/k8s-copycat/releases/latest --jq '.tag_name')
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+
+      - name: Read current appVersion
+        id: current
+        run: |
+          CURRENT=$(grep '^appVersion:' Chart.yaml | sed 's/appVersion: *"\(.*\)"/\1/')
+          echo "version=${CURRENT}" >> "$GITHUB_OUTPUT"
+
+      - name: Update Chart.yaml
+        if: steps.latest.outputs.tag != steps.current.outputs.version
+        run: |
+          sed -i "s/^appVersion: .*/appVersion: \"${{ steps.latest.outputs.tag }}\"/" Chart.yaml
+
+      - name: Create pull request
+        if: steps.latest.outputs.tag != steps.current.outputs.version
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "chore(deps): bump appVersion to ${{ steps.latest.outputs.tag }}"
+          title: "chore(deps): bump appVersion to ${{ steps.latest.outputs.tag }}"
+          body: |
+            Bumps the default k8s-copycat image from `${{ steps.current.outputs.version }}` to `${{ steps.latest.outputs.tag }}`.
+
+            Release: https://github.com/matzegebbe/k8s-copycat/releases/tag/${{ steps.latest.outputs.tag }}
+          branch: chore/update-appversion
+          labels: dependencies,docker,helm-chart

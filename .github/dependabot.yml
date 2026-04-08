@@ -25,17 +25,6 @@ updates:
       include: "scope"
     labels: ["dependencies", "helm-chart"]
 
-  - package-ecosystem: "docker"
-    directory: "/"
-    schedule:
-      interval: "daily"
-      time: "07:10"
-      timezone: "Europe/Berlin"
-    labels: ["dependencies", "docker", "helm-chart"]
-    commit-message:
-      prefix: "chore"
-      include: "scope"
-    open-pull-requests-limit: 5
-    allow:
-      # Track new Copycat controller releases so the chart's default image tag stays current.
-      - dependency-name: "ghcr.io/matzegebbe/k8s-copycat"
+  # NOTE: appVersion tracking for ghcr.io/matzegebbe/k8s-copycat is handled by
+  # .github/workflows/update-appversion.yml because Dependabot's Docker ecosystem
+  # only parses Dockerfiles, not Helm Chart.yaml appVersion fields.
