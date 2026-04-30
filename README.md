@@ -151,6 +151,7 @@ These values render directly into `config.yaml` and are consumed by the controll
 | `config.skipNamespaces` | Namespaces to skip. | `[]` |
 | `config.skipNames.deployments/statefulSets/daemonSets/jobs/cronJobs/pods` | Resource names to ignore. | `[]` |
 | `config.digestPull` | Prefer digest-based pulls. | `false` |
+| `config.digestPullIgnoredTags` | Tags to keep tag-based even when `digestPull` is enabled. | `[]` |
 | `config.checkNodePlatform` | Require matching node platform. | `false` |
 | `config.mirrorPlatforms` | Target platforms to mirror. | `[]` |
 | `config.allowDifferentDigestRepush` | Allow repush with differing digests. | `true` |
@@ -158,8 +159,8 @@ These values render directly into `config.yaml` and are consumed by the controll
 | `config.watchResources` | Specific resources to watch. | `[]` |
 | `config.maxConcurrentReconciles` | Concurrent reconciliations. | `2` |
 | `config.requestTimeout` | Request timeout in seconds. | `120` |
-| `config.failureCooldownMinutes` | Cooldown after a failure. | `null` |
-| `config.forceReconcileMinutes` | Forced reconcile interval. | `null` |
+| `config.failureCooldownMinutes` | Cooldown after a failure. | `0` |
+| `config.forceReconcileMinutes` | Forced reconcile interval. | `0` |
 | `config.ecr.accountID` / `config.ecr.region` / `config.ecr.repoPrefix` | AWS ECR settings. | `""` / `""` / `""` |
 | `config.ecr.createRepo` | Create target ECR repos automatically. | `false` |
 | `config.ecr.assumeRoleArn` | Optional IAM role ARN to assume before ECR operations. | `""` |
