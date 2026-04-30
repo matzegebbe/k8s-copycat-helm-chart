@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.7.6](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.7.5...k8s-copycat-chart-v0.7.6) (2026-04-30)
+
+
+### Documentation
+
+* **values:** refresh image tag example for current appVersion ([#21](https://github.com/matzegebbe/k8s-copycat-helm-chart/issues/21)) ([7d0ac66](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/7d0ac6652efe8fba7453e22eee920eaaeb5fcaa2))
+
+
+### Miscellaneous
+
+* **deps:** bump googleapis/release-please-action from 4 to 5 ([#20](https://github.com/matzegebbe/k8s-copycat-helm-chart/issues/20)) ([eba7292](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/eba7292b5dc211f0859312bc0b066c0fcdad026c))
+* **deps:** bump softprops/action-gh-release from 2 to 3 ([#18](https://github.com/matzegebbe/k8s-copycat-helm-chart/issues/18)) ([4764a88](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/4764a88483fb5f31bf5ef361ca2e7d2d1a7852cf))
+
 ## [0.7.5](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.7.4...k8s-copycat-chart-v0.7.5) (2026-04-10)
 
 
