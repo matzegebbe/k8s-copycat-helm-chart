@@ -5,7 +5,7 @@ image:
   # -- Docker image repository
   repository: ghcr.io/matzegebbe/k8s-copycat
   # -- Overrides the image tag whose default is the chart appVersion
-  tag: "" # leave empty to use the chart appVersion (release tag, e.g. v0.26.0)
+  tag: "" # leave empty to use the chart appVersion (release tag, e.g. v0.27.1)
   # -- Container pull policy
   pullPolicy: IfNotPresent
 
