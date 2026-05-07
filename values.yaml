@@ -213,6 +213,7 @@ config:
   digestPullIgnoredTags: []
   checkNodePlatform: false
   mirrorPlatforms: []
+  ignoreMissingPlatforms: []
   allowDifferentDigestRepush: true
   excludeRegistries: []
   watchResources: []
