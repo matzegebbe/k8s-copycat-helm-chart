@@ -154,6 +154,7 @@ These values render directly into `config.yaml` and are consumed by the controll
 | `config.digestPullIgnoredTags` | Tags to keep tag-based even when `digestPull` is enabled. | `[]` |
 | `config.checkNodePlatform` | Require matching node platform. | `false` |
 | `config.mirrorPlatforms` | Target platforms to mirror. | `[]` |
+| `config.ignoreMissingPlatforms` | Regex list of `<source-image>|<platform>` entries to suppress expected missing-platform logs. | `[]` |
 | `config.allowDifferentDigestRepush` | Allow repush with differing digests. | `true` |
 | `config.excludeRegistries` | Registries to ignore. | `[]` |
 | `config.watchResources` | Specific resources to watch. | `[]` |
@@ -185,6 +186,8 @@ config:
     - default
   dryRun: false
   dryPull: false
+  ignoreMissingPlatforms:
+    - "^docker\\.io/library/busybox\\|linux/arm64$"
 serviceMonitor:
   enabled: true
 ```
@@ -249,6 +252,19 @@ stringData:
 configMap:
   create: false
   existingConfigMap: copycat-config
+```
+
+### Suppressing expected missing-platform logs
+
+Use `config.ignoreMissingPlatforms` with regex patterns in the format `<source-image>|<platform>` to suppress known, expected missing-platform messages.
+
+```yaml
+config:
+  ignoreMissingPlatforms:
+    # ignore busybox arm64 missing-platform logs
+    - "^docker\\.io/library/busybox\\|linux/arm64$"
+    # ignore all alpine variants for linux/s390x
+    - "^docker\\.io/library/alpine(:.+)?\\|linux/s390x$"
 ```
 
 ## Automation
