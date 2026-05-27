@@ -226,7 +226,9 @@ config:
     cronJobs: []
     pods: []
   maxConcurrentReconciles: 2
-  requestTimeout: 120
+  requestTimeout: 300
+  registryRetryAttempts: 3
+  registryRetryBackoff: 10
   failureCooldownMinutes: 0
   forceReconcileMinutes: 0
   ecr:
