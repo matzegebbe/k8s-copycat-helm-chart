@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.8.0](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.7.6...k8s-copycat-chart-v0.8.0) (2026-05-27)
+
+
+### Features
+
+* **chart:** add registry retry settings ([#24](https://github.com/matzegebbe/k8s-copycat-helm-chart/issues/24)) ([d672d7d](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/d672d7db4c08259cbca97287e01a187ea907d9af))
+
 ## [0.7.6](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.7.5...k8s-copycat-chart-v0.7.6) (2026-04-30)
 
 
