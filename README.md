@@ -159,7 +159,9 @@ These values render directly into `config.yaml` and are consumed by the controll
 | `config.excludeRegistries` | Registries to ignore. | `[]` |
 | `config.watchResources` | Specific resources to watch. | `[]` |
 | `config.maxConcurrentReconciles` | Concurrent reconciliations. | `2` |
-| `config.requestTimeout` | Request timeout in seconds. | `120` |
+| `config.requestTimeout` | Request timeout in seconds. | `300` |
+| `config.registryRetryAttempts` | Total attempts for retryable registry operations. | `3` |
+| `config.registryRetryBackoff` | Delay in seconds between retry attempts. | `10` |
 | `config.failureCooldownMinutes` | Cooldown after a failure. | `0` |
 | `config.forceReconcileMinutes` | Forced reconcile interval. | `0` |
 | `config.ecr.accountID` / `config.ecr.region` / `config.ecr.repoPrefix` | AWS ECR settings. | `""` / `""` / `""` |
@@ -186,6 +188,9 @@ config:
     - default
   dryRun: false
   dryPull: false
+  requestTimeout: 300
+  registryRetryAttempts: 3
+  registryRetryBackoff: 10
   ignoreMissingPlatforms:
     - "^docker\\.io/library/busybox\\|linux/arm64$"
 serviceMonitor:
