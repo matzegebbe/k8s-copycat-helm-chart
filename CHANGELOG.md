@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.8.9](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.8.8...k8s-copycat-chart-v0.8.9) (2026-11-27)
+
+
+### Miscellaneous
+
+* **deps:** bump appVersion to v0.40.0 ([#44](https://github.com/matzegebbe/k8s-copycat-helm-chart/issues/44)) ([6753a43](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/6753a43875c4aebcb125df28d529431945a59ba8))
+* **deps:** bump appVersion to v0.41.0 ([#46](https://github.com/matzegebbe/k8s-copycat-helm-chart/issues/46)) ([3bbecc3](https://github.com/matzegebbe/k8s-copycat-helm-chart/commit/3bbecc3a309edd3541f6e6dfe49e399362a6b9ac))
+
 ## [0.8.8](https://github.com/matzegebbe/k8s-copycat-helm-chart/compare/k8s-copycat-chart-v0.8.7...k8s-copycat-chart-v0.8.8) (2026-10-22)
 
 
